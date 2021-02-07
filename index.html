@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hungry MOnster</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="col-md-6 m-auto py-5">
+        <div class="input-group mb-3">
+            <input id="input-text" class="form-control" type="text" placeholder="Enter a location for Weather ..." value="chicken">
+            <div class="input-group-append">
+                <button id="search-button" type="button" class="btn btn-danger">Search</button>
+            </div>
+        </div>
+    </form>
+    
+ 
+    <div id="meal-detail">
+
+    </div>
+
+    <div id="mealList">
+
+
+    </div>
+
+    <script>
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const inputMeal = document.getElementById('input-text').value;
+            fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + inputMeal)
+                .then(res => res.json())
+                .then(data => {
+                    const mealDiv = document.getElementById('mealList');
+                    document.getElementById('mealList').innerHTML = ``;
+                    for (let i = 0; i < data['meals'].length; i++) {
+                        const mealItem = document.createElement('div');
+                        mealItem.className = 'items';
+                        meal = data['meals'][i];
+                        const mealInfo = `
+                        <img src = ${meal.strMealThumb}>
+                        <h4>${meal.strMeal}</h4>
+                        `
+                        mealItem.innerHTML= mealInfo;
+                        mealDiv.appendChild(mealItem);
+                        mealItem.addEventListener('click', () => {
+                            document.getElementById('meal-detail').innerHTML=`
+                            <img src= ${data['meals'][i].strMealThumb}> 
+                            <h3>${data['meals'][i].strMeal}</h3>
+                            <li> ${data['meals'][i].strIngredient1}  </li>
+                            <li> ${data['meals'][i].strIngredient2}  </li>
+                            <li> ${data['meals'][i].strIngredient3}  </li>
+                            <li> ${data['meals'][i].strIngredient4}  </li>
+                            <li> ${data['meals'][i].strIngredient5}  </li>
+                            
+                            `
+                        })
+                        
+                    }
+                })
+                
+        })
+        
+
+    </script>
+</body>
+
+</html>

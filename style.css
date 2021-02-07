@@ -1,0 +1,29 @@
+*{
+    list-style:none;
+}
+#mealList  img {
+    width : 200px;
+}
+#meal-detail img{
+    width : 200px;
+}
+
+#meal-detail{
+   
+    text-align : center;
+}
+
+
+.items{
+    border : 1px solid goldenrod;
+    border-radius : 5px;
+    text-align : center;
+    font-weight : 200;
+}
+#mealList{
+    
+    margin: 10px 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
