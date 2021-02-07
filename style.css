@@ -1,27 +1,28 @@
 *{
     list-style:none;
 }
+body{
+    background-color: linen;
+}
 #mealList  img {
-    width : 200px;
+    width : 250px;
 }
 #meal-detail img{
-    width : 200px;
+    width : 250px;
 }
 
 #meal-detail{
-   
     text-align : center;
 }
-
-
-.items{
-    border : 1px solid goldenrod;
+.meal{
+    border : 2px solid goldenrod;
     border-radius : 5px;
     text-align : center;
-    font-weight : 200;
+    font-weight : 100;
+    font-size: 15px;
+    background-color: lightblue;
 }
-#mealList{
-    
+#mealList{  
     margin: 10px 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
