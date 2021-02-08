@@ -21,11 +21,11 @@ document.getElementById('search-button').addEventListener('click', () => {
                     <h4>${meal.strMeal}</h4>
                     <h5> Ingredients </h5>
                     <li> ${meal.strIngredient1}  </li>
-                    <li> ${meal.strIngredient2}  </li>
-                    <li> ${meal.strIngredient3}  </li>
-                    <li> ${meal.strIngredient4}  </li>
-                    <li> ${meal.strIngredient5}  </li>
-                    <li> ${meal.strIngredient6}  </li>
+                     <li> ${meal.strIngredient2}  </li>
+                     <li> ${meal.strIngredient3}  </li>
+                     <li> ${meal.strIngredient4}  </li>
+                     <li> ${meal.strIngredient5}  </li>
+                     <li> ${meal.strIngredient6}  </li>
                     `
                 });
             });
