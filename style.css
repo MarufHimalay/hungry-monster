@@ -2,7 +2,10 @@
     list-style:none;
 }
 body{
-    background-color: linen;
+    background-image: url("background-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 #mealList  img {
     width : 250px;
@@ -15,12 +18,12 @@ body{
     text-align : center;
 }
 .meal{
-    border : 2px solid goldenrod;
-    border-radius : 5px;
+    border : 3px solid white;
+   
     text-align : center;
     font-weight : 100;
     font-size: 15px;
-    background-color: lightblue;
+    background-color: lightsalmon;
 }
 #mealList{  
     margin: 10px 100px;

@@ -5,6 +5,7 @@ document.getElementById('search-button').addEventListener('click', () => {
         .then(data => {
             const mealDiv = document.getElementById('mealList');
             document.getElementById('mealList').innerHTML = ``;
+            document.getElementById('meal-detail').innerHTML = ``;
             data['meals'].forEach(meal => {
                 const mealItem = document.createElement('div');
                 mealItem.className = 'meal';
@@ -32,7 +33,7 @@ document.getElementById('search-button').addEventListener('click', () => {
         })     
         .catch(error => {
             document.getElementById("meal-detail").innerHTML = `
-            <h3>Not available right now sir! Try another one please..</h3>
+            <h3 class="text-danger">Sorry!!! Try with another one please..</h3>
             `
         });    
 });
